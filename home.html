@@ -26,7 +26,7 @@
     var pw;
 
     function checkLogin() {
-        if (grecaptcha.getResponse().length === 0) {
+        if (grecaptcha.getResponse().length == 0) {
             //reCaptcha not verified
 
         } else {
@@ -37,8 +37,7 @@
     };
 
     const checkRecaptcha = function () {
-
-        if (grecaptcha.getResponse().length === 0) {
+        if (grecaptcha.getResponse().length == 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
         } else {
