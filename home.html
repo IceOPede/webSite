@@ -25,12 +25,8 @@
     var username;
     var pw;
 
-    var response = [];
-
-    window.setInterval(checkRecaptchaAgain(), 5000);
-
     function checkLogin() {
-        if (response.length === 0) {
+        if (grecaptcha.getResponse().length === 0) {
             //reCaptcha not verified
 
         } else {
@@ -40,21 +36,9 @@
         console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
     };
 
-    function checkRecaptchaAgain() {
-        if (response.length === 0) {
-            //reCaptcha not verified
-            document.getElementById("submitButton").disabled = true;
-        } else {
-            //reCaptch verified
-            document.getElementById("submitButton").disabled = false;
-            document.getElementById("submitButton").style.visibility = "visible";
-            console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
-        }
-    };
-
     const checkRecaptcha = function () {
-        response = grecaptcha.getResponse();
-        if (response.length === 0) {
+
+        if (grecaptcha.getResponse().length === 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
         } else {
