@@ -69,6 +69,10 @@
             document.getElementById("message").innerHTML = "Success";
         } else {
             grecaptcha.reset();
+
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").style.visibility = "hidden";
+
             document.getElementById("message").style.color = "red";
             document.getElementById("message").innerHTML = "Try again / try:" + tries;
             a = false;
