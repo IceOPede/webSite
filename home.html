@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Brute Force</title>
+</head>
+
+<body>
+<form id="myForm">
+    <h1>Username</h1>
+    <input type="text" id="inputText"/>
+    <h1>Password</h1>
+    <input type="password" id="inputPw"/>
+    <br/>
+    <input id="submitButton" type="button" onclick="checkLogin()" value="Submit" style="margin-top:10px" disabled/>
+
+    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns" data-callback="checkLogin"></div>
+</form>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+    var username;
+    var pw;
+
+    var checkLogin = function () {
+        if (grecaptcha.getResponse().length == 0) {
+            //reCaptcha not verified
+            document.getElementById("submitButton").disabled = true;
+        } else {
+            //reCaptch verified
+            document.getElementById("submitButton").disabled = false;
+            alert(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
+        }
+    }
+</script>
+</body>
+</html>
