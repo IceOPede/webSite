@@ -13,9 +13,12 @@
     <input type="password" id="inputPw"/>
     <br/>
     <br/>
-    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns" data-callback="checkLogin"></div>
+    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns"
+         data-callback="checkRecaptcha"></div>
+    <p id="messageText"></p>
     <br/>
-    <input id="submitButton" type="button" onclick="checkLogin()" value="Submit" style="margin-top:10px; visibility: hidden" disabled/>
+    <input id="submitButton" type="button" onclick="checkLogin()" value="Submit"
+           style="margin-top:10px; visibility: hidden" disabled/>
 </form>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
@@ -24,21 +27,30 @@
 
     window.setInterval(checkRecaptchaAgain(), 5000);
 
-    var checkLogin = function () {
-        if (grecaptcha.getResponse().length == 0) {
+    function checkLogin() {
+        if (grecaptcha.getResponse().length === 0) {
+            //reCaptcha not verified
+
+        } else {
+            //reCaptch verified
+
+        }
+        console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
+    }
+
+    const checkRecaptcha = function () {
+        if (grecaptcha.getResponse().length === 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
         } else {
             //reCaptch verified
             document.getElementById("submitButton").disabled = false;
             document.getElementById("submitButton").style.visibility = "visible";
-            console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
         }
-    }
-
+    };
 
     function checkRecaptchaAgain() {
-        if (grecaptcha.getResponse().length == 0) {
+        if (grecaptcha.getResponse().length === 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
         } else {
