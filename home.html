@@ -12,16 +12,18 @@
     <h1>Password</h1>
     <input type="password" id="inputPw"/>
     <br/>
+    <p id="message"></p>
     <br/>
-    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns" data-callback="checkRecaptcha"></div>
-    <input id="submitButton" type="button" onclick="" value="Submit" style="margin-top:10px; visibility: hidden" disabled/>
+    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns"
+         data-callback="checkRecaptcha"></div>
+    <input id="submitButton" type="button" onclick="checkLogin" value="Submit" style="margin-top:10px; visibility: hidden"
+           disabled/>
 </form>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
-    var username;
-    var pw;
 
-    var checkRecaptcha = function () {
+
+    var checkRecaptcha = function (){
         if (grecaptcha.getResponse().length == 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
@@ -31,6 +33,18 @@
             document.getElementById("submitButton").style.visibility = "visible";
             console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
         }
+    }
+
+    function checkLogin() {
+        var username = "HALLO";
+        var pw = 9988112233;
+
+        var encryptedU = CryptoJS.AES.encrypt(username, "Super Secret Key");
+        var encryptedP = CryptoJS.AES.encrypt(pw, "Super Secret Key");
+
+        var decryptedU = CryptoJS.AES.decrypt(encryptedU, "Super Secret Key");
+        var decryptedP = CryptoJS.AES.decrypt(encryptedP, "Super Secret Key");
+        alert(decryptedU + "" + decryptedP);
     }
 </script>
 </body>
