@@ -68,6 +68,7 @@
             document.getElementById("message").style.color = "green";
             document.getElementById("message").innerHTML = "Success";
         } else {
+            grecaptcha.reset();
             document.getElementById("message").style.color = "red";
             document.getElementById("message").innerHTML = "Try again / try:" + tries;
             a = false;
