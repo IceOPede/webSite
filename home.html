@@ -12,23 +12,23 @@
     <h1>Password</h1>
     <input type="password" id="inputPw"/>
     <br/>
-    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns" data-callback="checkLogin"></div>
     <br/>
-    <input id="submitButton" type="button" onclick="checkLogin()" value="Submit" style="margin-top:10px; visibility: hidden" disabled/>
+    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns" data-callback="checkRecaptcha"></div>
+    <input id="submitButton" type="button" onclick="" value="Submit" style="margin-top:10px; visibility: hidden" disabled/>
 </form>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
     var username;
     var pw;
 
-    var checkLogin = function () {
+    var checkRecaptcha = function () {
         if (grecaptcha.getResponse().length == 0) {
             //reCaptcha not verified
             document.getElementById("submitButton").disabled = true;
         } else {
             //reCaptch verified
             document.getElementById("submitButton").disabled = false;
-            document.getElementById("submitButton").style.visibility = "";
+            document.getElementById("submitButton").style.visibility = "visible";
             console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
         }
     }
