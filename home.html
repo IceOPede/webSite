@@ -4,27 +4,42 @@
 <!-- @author: Patric -->
 
 <head>
-    <meta charset="utf-8">
-    <title>Brute Force</title>
+<meta charset="utf-8">
+<title>Brute Force</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
 <body>
-<form id="myForm">
-    <h1>Username</h1>
-    <input type="text" id="inputText"/>
-    <h1>Password</h1>
-    <input type="password" id="inputPw"/>
-    <br/>
-    <p id="message"></p>
-    <br/>
-    <div class="g-recaptcha" data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns"
-         data-callback="checkRecaptcha"></div>
-    <input id="submitButton" type="button" onclick="callMethods()" value="Submit"
-           style="margin-top:10px; visibility: hidden"
-           disabled/>
-</form>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-<script src="js.js"></script>
+	<nav>
+		<div id="head">
+			<h1>Do your best !!!</h1>
+		</div>
+	</nav>
+	<div id="content">
+		<form id="myForm">
+			<div id="fields">
+				<h1>Username</h1>
+				<input type="text" id="inputText" />
+				<h1>Password</h1>
+				<input type="password" id="inputPw" /> <br />
+				<p id="message"></p>
+			</div>
+			<br />
+			<div class="g-recaptcha"
+				data-sitekey="6Lch518UAAAAAPR0AxQrTpPB6CLx98CNyQrg_gns"
+				data-callback="checkRecaptcha"></div>
+			<div id="button">
+				<input id="submitButton" type="button" onclick="callMethods()"
+					value="Submit" disabled />
+			</div>
+		</form>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+		<script src="js.js"></script>
+	</div>
+	<div id="valuablegif">
+		<img src="giphy.webp">
+	</div>
 </body>
 </html>

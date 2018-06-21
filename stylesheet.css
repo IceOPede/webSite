@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+/* author: Roman Isler */
+body {
+	margin: 0px;
+	background-image: url("rainbow_stripes_by_alignwebdesign.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+nav {
+	height: 65px;
+	background-color: black;
+	margin: auto;
+	
+}
+
+#head {
+	padding-top: 15px;
+}
+
+#head h1 {
+	color: white;
+	margin: 0px;
+	text-align: center;
+	font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+#submitButton {
+	margin-top: 10px;
+	visibility: hidden
+}
+
+#content {
+	font-family: Comic Sans MS, cursive, sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	margin: auto;
+}
+
+#content form{
+	margin: auto;
+}
+
+#fields{
+	width: 50%;
+	margin: auto;
+}
+
+#button{
+	width: 50%;
+	margin: auto;
+}
+
+#valuablegif{
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
