@@ -3,8 +3,8 @@
 body {
 	margin: 0px;
 	background-image: url("rainbow_stripes_by_alignwebdesign.jpg");
-	background-repeat: no-repeat;
 	background-size: 100%;
+	background-repeat: repeat-y;
 }
 
 nav {
