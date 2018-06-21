@@ -51,7 +51,7 @@ function checkLogin() {
     } else {
         console.log("try to check");
         var entUsername = "48414c4c4f";
-        var entPw = "36554961392a6c7a4e7633344d585125794f3435324b4679264841455a7745637438746a706b4445433572406739494d2662305450455e2a7961763866444659494b684d6a4a5932477a43346f404b516934782a4c74566758335a33664d6e6b696f6758";
+        var entPw = "25477765663132264c436947542a5139";
 
         var newU = CryptoJS.AES.encrypt(document.getElementById("inputText").value, "Super Secret Key");
         var newP = CryptoJS.AES.encrypt(document.getElementById("inputPw").value, "Super Secret Key");
