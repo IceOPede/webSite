@@ -12,7 +12,6 @@ var checkRecaptcha = function () {
         //reCaptch verified
         document.getElementById("submitButton").disabled = false;
         document.getElementById("submitButton").style.visibility = "visible";
-        console.log(document.getElementById("inputText").value + " " + document.getElementById("inputPw").value);
     }
 };
 
